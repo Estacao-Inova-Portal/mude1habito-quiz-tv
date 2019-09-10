@@ -1,0 +1,102 @@
+form{
+  overflow: hidden;
+}
+
+form, fieldset{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+fieldset{
+  margin-top: $line-height;
+  border: 1px solid $gray-lighter;
+  border-radius: $radius;
+  padding: $line-height;
+  & > legend:first-child{
+    font-weight: 800;
+  }
+}
+
+label, legend{
+  margin-top: $line-height;
+  display: block;
+}
+
+input, textarea, select{
+  &:not([type="submit"]):not([type="radio"]):not([type="checkbox"]):not([type="reset"]){
+    padding: $unit * 2;
+    margin: 0 0 $line-height;
+    width: 90%;
+    max-width: $ideal-text-column;
+    border: $form-border;
+    border-radius: $radius;
+    line-height: $line-height + $unit;
+    height: initial;
+    &:focus{
+      outline: 3px solid $focus;
+      outline-offset: 0;
+    }
+  }
+  &[type="checkbox"],&[type="radio"]{
+    -webkit-appearance: none;
+    appearance: none;
+    border: $form-border;
+    height: $unit-4 + $unit;
+    width: $unit-4 + $unit;
+    margin-right: $unit;
+    margin-bottom: $unit / -1;
+    &:focus{
+      outline: 3px solid $focus;
+      outline-offset: 0;
+    }
+    &:checked{
+      background: $main-color;
+    }
+    &:checked + label{
+      font-weight: 800;
+    }
+  }
+  &[type="radio"]{
+    border-radius: $unit-4;
+    &:focus{
+      outline: none;
+      border-color: $focus;
+    }
+  }
+  &:only-child{
+    margin: 0;
+  }
+}
+
+// Elements
+.form__hint{
+  display: block;
+  color: $gray;
+}
+
+.form__multiple-choice{
+  label{
+    display: inline-block;
+  }
+}
+
+.form__multiple-choice:last-of-type{
+  margin-bottom: $unit-2;
+}
+
+// Media Querie
+// ----------------------
+@media (max-width: $break-default){
+  fieldset{
+    padding: $unit-2;
+  }
+  input, textarea, select{
+    &:not([type="submit"]):not([type="radio"]):not([type="checkbox"]):not([type="reset"]){
+      width: 100%;
+      width: -moz-available;
+      width: -webkit-fill-available;
+      width: fill-available;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Camada_1" data-name="Camada 1" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .cls-2{fill:#ececec}.cls-3{fill:#5b5c65}
+    </style>
+  </defs>
+  <path fill="#dfe0e1" d="M195.59 367.1H304.4v37.78H195.59z"/>
+  <path d="M21.8 336.88h456.4v22.67a7.56 7.56 0 0 1-7.56 7.56H29.36a7.56 7.56 0 0 1-7.56-7.56v-22.67zM141.19 403.38h217.62a7.56 7.56 0 0 1 7.56 7.56V420H133.63v-9.07a7.56 7.56 0 0 1 7.56-7.55z" class="cls-2"/>
+  <path d="M29.35 86h441.3a7.56 7.56 0 0 1 7.56 7.56v243.32H21.79V93.56A7.56 7.56 0 0 1 29.35 86z" class="cls-3"/>
+  <path fill="#ffe191" d="M30.86 96.58h62.61v240.3H30.86z"/>
+  <path fill="#f69651" d="M93.47 96.58h62.61v240.3H93.47z"/>
+  <path fill="#c68dbe" d="M156.08 96.58h62.61v240.3h-62.61z"/>
+  <path fill="#7ac0a0" d="M218.69 96.58h62.61v240.3h-62.61z"/>
+  <path fill="#62447f" d="M281.31 96.58h62.61v240.3h-62.61z"/>
+  <path fill="#f0666f" d="M343.92 96.58h62.61v240.3h-62.61z"/>
+  <path fill="#baddcc" d="M406.53 96.58h62.61v240.3h-62.61z"/>
+  <circle cx="250" cy="351.99" r="9.45" class="cls-3"/>
+</svg>

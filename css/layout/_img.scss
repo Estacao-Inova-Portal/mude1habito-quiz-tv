@@ -1,0 +1,57 @@
+img{
+  max-width: 100%;
+  object-fit: contain;
+}
+
+// Image Modifiers
+// ----------------------
+.img--thumbnail{
+  width: $line-height * 6;
+  height: $line-height * 6;
+  object-fit: scale-down;
+  max-width: 90%;
+  margin-bottom: - $unit;
+}
+
+.img--thumbnail-padding{
+  width: $unit * 30;
+  height: $unit * 30;
+  padding: $unit * 3;
+  object-fit: scale-down;
+  margin-bottom: - $unit;
+}
+
+.img--centered{
+  margin: auto;
+  display: block;
+}
+
+.img--clickable-icon{
+  height: $unit * 8;
+  width: $unit * 8;
+  margin: $unit-2;
+  float: right;
+  object-fit: contain;
+  &:first-of-type{
+    margin-right: 0;
+  }
+  &:last-of-type{
+    margin-left: 0;
+  }
+}
+
+// Media Querie
+// ----------------------
+@media (max-width: $break-default){
+  .img--thumbnail, .img--thumbnail-padding{
+    width: $unit * 22;
+    height: $unit * 22;
+    margin: auto;
+    display: block;
+  }
+  .img--thumbnail-padding{
+    display: inline-block;
+    max-width: 25%;
+    padding: $unit * 6 $unit * 2;
+  }
+}

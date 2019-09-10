@@ -1,0 +1,49 @@
+.menu{
+  height: 100%;
+  width: 100%;
+}
+
+// Menu Elements
+// ----------------------
+.menu__link-list{
+  list-style:none;
+  padding-left: $unit-4;
+  a{
+    box-shadow: none;
+    display: inline-block;
+    padding: $unit * 3 0;
+  }
+  ul{
+    margin: 0;
+  }
+}
+
+// Menu Modifiers
+// ----------------------
+.menu--fixed{
+  position: fixed;
+  width: $unit-8 *8;
+  overflow: auto;
+  height: calc(100% - 117px);
+}
+
+// Media Querie
+// ----------------------
+@media (max-width: $break-default){
+  .menu--fixed{
+    background: white;
+    width: 100%;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding-top: $line-height * 4;
+    text-align: center;
+    font-size: $unit-4 + $unit;
+    z-index: 9;
+    height: calc(100% - 108px);
+  }
+  .menu__link-list{
+    padding-left: 0;
+  }
+}

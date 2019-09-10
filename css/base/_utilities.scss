@@ -1,0 +1,43 @@
+// ---------
+// Utilities
+// ---------
+
+//.hide-accessible and .quick-access-nav are Liferay classes
+.util--display-none, .util--display-none-desktop, .hide-accessible, .quick-access-nav{
+  display: none!important;
+}
+
+//.unstyled is a Liferay class
+.util--no-style, .unstyled{
+  margin: 0!important;
+  padding: 0!important;
+  border: 0!important;
+  box-shadow: none!important;
+  background: none!important;
+  color: initial!important;
+  height: initial!important;
+  width: initial!important;
+  line-height: 0!important;
+  display: flex;
+  &:focus{
+    outline: $focus auto $unit-2;
+  }
+}
+
+.util--overflow-hidden{
+  overflow: hidden!important;
+}
+
+// Media Querie
+// ----------------------
+@media (max-width: $break-default){
+  .util--no-style{
+    flex: 1 1 0;
+  }
+  .util--display-none-mobile{
+    display: none!important;
+  }
+  .util--display-none-desktop{
+    display: initial!important;
+  }
+}

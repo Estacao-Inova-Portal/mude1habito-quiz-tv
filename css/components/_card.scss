@@ -1,0 +1,150 @@
+//.portlet-content is a Liferay class
+.card, .portlet-content{
+  padding: $line-height;
+  border: 0;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  background: $white;
+  overflow: hidden;
+  position: relative;
+  & *:last-child{
+    margin-bottom: 0;
+  }
+  & .btn, button, input[type="submit"], input[type="reset"]{
+    margin-top: $line-height;
+    margin-bottom: 0;
+  }
+}
+
+// Card Elements
+// ----------------------
+.card__small{
+  width: 100%;
+  max-width: $unit * 65;
+}
+.card--contains-full-size{
+  height: calc(100% - 40px); 
+  &> * {
+    flex: initial;
+  }
+  .card__full-size-element{
+    float: left;
+    margin-left: - $unit * 6;
+    margin-top: - $unit * 6;
+    margin-bottom: - $unit * 6;
+    height: initial;
+    object-fit: cover;
+  }
+  .card--to-the-right{
+    float: right;
+    margin-left: 0;
+    margin-right: - $unit * 6;
+  }
+}
+
+// Card modifiers
+// ----------------------
+// Base Background color Mixin
+@mixin cardColor($background-color, $color: $white) {
+  background-color: $background-color;
+  color: $color;
+  a{
+    color: $color;
+  }
+  .btn, button, input[type="submit"], input[type="reset"],.btn--simple{
+    color: $color;
+    border-color: $color;
+    &:hover{
+      background: lighten($background-color, 12);
+    }
+    &:disabled{
+      cursor: default;
+      border-color: $gray-darker;
+      color: $gray-darker;
+      pointer-events: none;
+      background: rgba($gray-darker, 0.25);
+    }
+  }
+  .btn--simple{
+    border-color: rgba(255,255,255,0);
+    &:hover{
+      color: $color;
+      border-color: $color;
+    }
+  }
+}
+
+// Backgrond color Modifiers
+.card--primary-color{
+  @include cardColor($primary);
+  ::selection {
+    background: $secondary-orange;
+    color: white;
+  }
+  ::-moz-selection {
+    background: $secondary-orange;
+    color: white;
+  }
+}
+
+.card--secondary-color-magenta{
+  @include cardColor($secondary-magenta);
+}
+
+.card--secondary-color-purple-dark{
+  @include cardColor($secondary-purple-dark);
+}
+
+.card--secondary-color-purple{
+  @include cardColor($secondary-purple);
+}
+
+.card--secondary-color-brown{
+  @include cardColor($secondary-brown);
+}
+
+.card--secondary-color-orange{
+  @include cardColor($secondary-orange);
+}
+
+.card--secondary-color-yellow{
+  @include cardColor($secondary-yellow, $primary-dark);
+}
+
+.card--secondary-color-lime{
+  @include cardColor($secondary-lime, $primary-dark);
+}
+
+.card--secondary-color-gray{
+  @include cardColor($gray);
+}
+
+// Media Querie
+// ----------------------
+@media (max-width: $break-default){
+  .card{
+    width: calc(100% - 54px);
+    &.grid__columns > *{
+      margin: $unit-2 0;
+    }
+  }
+  .card__small{
+    min-width: $unit * 50;
+  }
+  .card--contains-full-size{
+    height: initial; 
+    & > *:not(.card__full-size-element){
+      order: 1;
+    }
+    .card__full-size-element, .card--to-the-right{
+      min-width: calc(100% + 54px);
+      min-height: $line-height * 5;
+      max-height: $line-height * 8;
+      float: left;
+      margin-left: - $unit * 6;
+      margin-right: - $unit * 6;
+      margin-top: - $unit * 6;
+      order: 0;
+    }
+  }
+}

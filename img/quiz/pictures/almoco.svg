@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Camada_1" data-name="Camada 1" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .cls-2{fill:#ffeec5}.cls-3{fill:#7ac0a0}.cls-4{fill:#ffe191}.cls-5{fill:#baddcc}.cls-6{fill:#f69651}
+    </style>
+  </defs>
+  <g opacity=".75">
+    <path d="M431.38 69l-13.36 3.45L71.68 418.79l9.98 9.99L428 82.44 431.38 69z" class="cls-2"/>
+    <rect width="70.62" height="77.18" x="134.06" y="292.5" class="cls-3" rx="6.05" transform="rotate(-45 169.36 331.09)"/>
+    <rect width="70.62" height="77.18" x="313.87" y="112.69" class="cls-4" rx="6.05" transform="rotate(-45 349.17 151.28)"/>
+    <rect width="70.62" height="77.18" x="223.63" y="202.93" class="cls-4" rx="6.05" transform="rotate(-45 258.93 241.52)"/>
+    <rect width="11.6" height="105.43" x="290.77" y="153.32" class="cls-3" rx="5.8" transform="rotate(-45 296.57 206.03)"/>
+    <rect width="11.6" height="105.43" x="119.2" y="324.88" class="cls-5" rx="5.8" transform="rotate(-45 125 377.6)"/>
+    <rect width="11.6" height="105.43" x="307.17" y="136.91" class="cls-6" rx="5.8" transform="rotate(-45 312.98 189.62)"/>
+    <rect width="11.6" height="105.43" x="199.05" y="244.02" class="cls-6" rx="5.8" transform="rotate(-45 204.85 296.73)"/>
+  </g>
+  <path d="M68.61 72.06l3.46 13.37 346.34 346.34 9.98-9.99L82.05 75.44l-13.44-3.38z" class="cls-2"/>
+  <rect width="70.62" height="77.18" x="284.3" y="284.39" class="cls-4" rx="6.05" transform="rotate(-135 319.6 322.98)"/>
+  <rect width="70.62" height="77.18" x="99.18" y="99.27" class="cls-4" rx="6.05" transform="rotate(-135 134.49 137.86)"/>
+  <rect width="102.4" height="77.18" x="193.68" y="209.67" fill="#f0666f" rx="7.29" transform="rotate(-135 244.88 248.26)"/>
+  <rect width="11.6" height="105.43" x="187.72" y="142.04" class="cls-3" rx="5.8" transform="rotate(-135 193.52 194.75)"/>
+  <rect width="11.6" height="105.43" x="169.17" y="123.49" class="cls-5" rx="5.8" transform="rotate(-135 174.97 176.2)"/>
+  <rect width="11.6" height="105.43" x="351.43" y="305.76" class="cls-6" rx="5.8" transform="rotate(-135 357.23 358.47)"/>
+</svg>

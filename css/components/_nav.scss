@@ -1,0 +1,105 @@
+.nav{
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $unit * 3;
+  width: 100%;
+  box-shadow: $shadow-strong;
+  min-height: $line-height * 2;
+  flex-direction: row;
+  h1,h2, h3, h4, p, button, & .btn{
+    margin: 0;
+  }
+  ul{
+    list-style:none;
+    padding: 0;
+    margin-left: $unit-4;
+    display: inline;
+  }
+  li{
+    display: inline;
+    margin-right: $unit-2;
+    & > * {
+      box-shadow: none;
+    }
+  }
+}
+
+
+// Nav Elements
+// ----------------------
+.nav__logo{
+  height: $unit-8 * 1.25;
+}
+
+// Nav Modifiers
+// ----------------------
+.nav--fixed{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: initial;
+  z-index: 10;
+}
+
+.nav--justify-reset{
+  justify-content: initial;
+  & > *:not(:first-child){
+    margin-left: $unit-2;
+  }
+}
+// Base Background color Mixin
+@mixin navColor($background-color, $color: $white) {
+  background-color: $background-color;
+  color: $color;
+  @if $color == $white {
+    .img--clickable-icon{
+      filter: invert(100%);
+    }
+  }
+}
+
+.nav--primary-color{
+  @include navColor($primary);
+}
+
+.nav--secondary-color-purple{
+  @include navColor($secondary-purple);
+}
+
+.nav--secondary-color-purple-dark{
+  @include navColor($secondary-purple-dark);
+}
+
+.nav--secondary-color-magenta{
+  @include navColor($secondary-magenta);
+}
+
+.nav--secondary-color-brown{
+  @include navColor($secondary-brown);
+}
+
+.nav--secondary-color-orange{
+  @include navColor($secondary-orange);
+}
+
+.nav--secondary-color-yellow{
+  @include navColor($secondary-yellow, $secondary-brown);
+}
+
+.nav--secondary-color-lime{
+  @include navColor($secondary-lime, $primary-dark);
+}
+
+// Media Querie
+// ----------------------
+@media (max-width: $break-default){
+  .nav{
+    padding: $unit / 2 $unit-2;
+  }
+  .nav__logo{
+    height: $unit-4 * 1.75;
+  }
+}

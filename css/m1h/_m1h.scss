@@ -1,0 +1,187 @@
+//Modificação no body
+body {
+  -webkit-overflow-scrolling: touch;
+}
+
+//Modificações em classes e estilos do tema
+// Botões seguindo estilo do formato da marca da Unimed
+.btn,
+button,
+input[type="submit"],
+input[type="reset"],
+button.card {
+  border-radius: $unit * 2 $unit * 2 0 $unit * 2;
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn:disabled,
+button:disabled,
+input[type="submit"]:disabled,
+input[type="reset"]:disabled {
+  border-color: $gray !important;
+  background: $gray !important;
+  color: $gray-dark !important;
+}
+
+.grid__container-full {
+  margin-top: 0;
+}
+
+.text--big {
+  line-height: 1.5;
+}
+
+.modal__container {
+  z-index: 10;
+}
+
+// Novas variáveis
+//Gradients
+$magenta-to-orange: linear-gradient(to right, $secondary-magenta, $secondary-orange);
+$green-to-lighter: linear-gradient(to right, $primary-50, $secondary-lime-25);
+
+//Novas classes
+
+//Background com fundo colorido
+.util--background-gradient-green {
+  color: $primary-dark;
+  background: $green-to-lighter;
+  .card {
+    box-shadow: $shadow-strong;
+  }
+}
+
+.util--background-gradient-magenta-to-orange {
+  color: white;
+  background: $magenta-to-orange;
+  .card {
+    box-shadow: $shadow-strong;
+  }
+}
+
+.util--background-gray-lighter {
+  background: $gray-lighter;
+  .card {
+    box-shadow: $shadow-strong;
+  }
+}
+
+//Centraliza o conteúdo
+.util--centered-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.img--smaller {
+  max-width: 90%;
+}
+
+.quiz {
+  margin: 0;
+  height: 100vh;
+}
+
+//Estilos apenas para a página
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.quiz__counter {
+  position: absolute;
+  top: -1.75 * $line-height;
+  width: 40 * $unit;
+  right: calc(50% - 90px);
+  background: $primary-75;
+  color: white;
+  border-radius: $unit;
+  padding: $unit;
+}
+
+// Quiz questions
+.card.btn--small-margins {
+  text-align: left;
+  padding: $line-height * 2;
+  padding-left: $line-height * 3.5;
+  position: relative;
+  max-width: 100%;
+  font-size: 2.75vw;
+  &:before {
+    content: "a";
+    text-align: center;
+    position: absolute;
+    padding: $unit * 2;
+    width: $line-height;
+    top: calc(50% - 25px);
+    left: $line-height * 0.75;
+    background: $gray-lighter-max;
+    border-radius: 100%;
+    transition: $transition;
+  }
+  &:hover {
+    &:before {
+      background: $primary-75;
+    }
+  }
+  &:nth-child(2) {
+    &:before {
+      content: "b";
+    }
+  }
+  &:nth-child(3) {
+    &:before {
+      content: "c";
+    }
+  }
+  &:nth-child(4) {
+    &:before {
+      content: "d";
+    }
+  }
+}
+
+form.grid--ideal-type {
+  margin-top: 26vh;
+}
+
+.quiz__result {
+  margin-top: $line-height * 4.5;
+  padding-left: 6vw;
+  h1,
+  h2,
+  h3 {
+    color: white;
+  }
+  h1 {
+    margin-top: $unit * 2;
+  }
+  a:not(.btn) {
+    color: $primary-dark;
+    font-weight: bold;
+  }
+  .btn:first-of-type {
+    margin-right: $unit * 3;
+  }
+}
+
+.quiz--image, .quiz__result-img {
+  order: 0;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  img {
+    max-width: 80%;
+  }
+}
+img.quiz__result-img{
+  max-width: 55%;
+  margin: auto;
+  margin-top: 5vh;
+}
+
+.quiz__questions, .quiz__result {
+  order: 1;
+}

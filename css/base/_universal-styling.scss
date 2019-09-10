@@ -1,0 +1,31 @@
+html{
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  ::selection {
+    background: $primary;
+    color: white;
+  }
+  ::-moz-selection {
+    background: $primary;
+    color: white;
+  }
+}
+
+body, html{
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-smoothing: unset;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  backface-visibility: hidden;
+  font-family: $font-sans-serif;
+  font-size: $font-size;
+  color: $font-color;
+}
+
+iframe{
+  width: 90%;
+  max-width: calc(100% - 27px);
+  box-sizing: border-box;
+  margin: auto;
+  display: block;
+}
