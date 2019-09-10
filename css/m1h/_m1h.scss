@@ -81,7 +81,8 @@ $green-to-lighter: linear-gradient(to right, $primary-50, $secondary-lime-25);
 
 .quiz {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
+  max-height: 100%;
 }
 
 //Estilos apenas para a página
@@ -122,9 +123,8 @@ $green-to-lighter: linear-gradient(to right, $primary-50, $secondary-lime-25);
     transition: $transition;
   }
   &:hover {
-    &:before {
-      background: $primary-75;
-    }
+   background: white;
+   color: $primary;
   }
   &:nth-child(2) {
     &:before {
