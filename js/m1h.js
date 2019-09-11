@@ -19,13 +19,6 @@ function lazyload() {
   elements.forEach(element => {
     element.dataset.src ? element.src = element.dataset.src : null;
   });
-
-  // Lazy load videos
-  if (document.getElementsByTagName('video')) {
-    Array.prototype.slice.call(document.getElementsByTagName('video')).forEach(element => {
-      element.children[0].dataset.src && element.load()
-    });
-  }
 }
 
 // Classes and components
@@ -229,6 +222,7 @@ class Quiz {
       '<p class="text--big">' + contents.description + '</p>' +
       '<h2>Próximos passos</h2>' +
       '<p class="text--big">Fique tranquilo. A gente te ajuda! Conheça agora o aplicativo Mude1Hábito, a central de saúde e bem-estar que vai te ajudar na jornada de mudanças de hábitos.</p>' +
+      '<a class="btn btn--secondary-color-lime text--big" onClick="restart()" style="display: block;">Iniciar novo Quiz</a>' +
       '</div>' +
       '<img src="img/quiz/pictures/' + contents.simpleName + '.svg" class="quiz__result-img" alt="Imagem representando ' + contents.name + '">';
 
@@ -238,6 +232,10 @@ class Quiz {
 
 // Creates the quiz
 const theQuiz = new Quiz('quizInterface')
+
+function restart(){
+  location.reload();
+}
 
 // End of Classes and components -----------------------------------------------------
 
