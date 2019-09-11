@@ -39,13 +39,13 @@ class Quiz {
       movement: 0,
     }
 
-    this.winner = ''
+    this.winner = 'balance'
 
     // The counter to keep track in which question the user is at the moment
     this.answerCounter = 0
 
     // The quiz content, fed by the backend API
-    this.contentArray = []
+    this.contentArray = content
 
     this.images = []
 
@@ -55,34 +55,7 @@ class Quiz {
     this.parent = document.getElementById('quizContainer')
   }
 
-  // initQuiz is started as a callback from a Google Sheets JSON call.
-  // This function gets the JSON value as a parameter and organizes it to be used by the front-end
   initQuiz(content) {
-    content.feed.entry.forEach(element => {
-      const group = {
-        question: element.gsx$pergunta.$t,
-        questionImg: element.gsx$imagempergunta.$t,
-        answers: [{
-          answer: element.gsx$resposta1.$t,
-          image: element.gsx$imagem1.$t,
-          value: element.gsx$valor1.$t,
-        }, {
-          answer: element.gsx$resposta2.$t,
-          image: element.gsx$imagem2.$t,
-          value: element.gsx$valor2.$t,
-        }, {
-          answer: element.gsx$resposta3.$t,
-          image: element.gsx$imagem3.$t,
-          value: element.gsx$valor3.$t,
-        }, {
-          answer: element.gsx$resposta4.$t,
-          image: element.gsx$imagem4.$t,
-          value: element.gsx$valor4.$t,
-        }],
-      }
-      this.contentArray.push(group)
-    });
-
     this.preload()
     this.printQuiz()
     this.addEvents()
@@ -265,18 +238,8 @@ class Quiz {
 
 // Creates the quiz
 const theQuiz = new Quiz('quizInterface')
+
 // End of Classes and components -----------------------------------------------------
 
-// Calls google pages APIs
-// This function is called at the end of this JS file
-function callAPIs() {
-  const req = new XMLHttpRequest()
-  req.open('GET', 'https://spreadsheets.google.com/feeds/list/1mpU_yd-BIHLQdZtMUhLCeaBXENYbPEPQt3BY7s0-1AQ/1/public/values?alt=json')
-  req.send()
-  req.onload = function () {
-    req.response && theQuiz.initQuiz(JSON.parse(req.response))
-  }
-}
-
-window.addEventListener('DOMContentLoaded', callAPIs());
+window.addEventListener('DOMContentLoaded', theQuiz.initQuiz());
 window.addEventListener('load', lazyload());
