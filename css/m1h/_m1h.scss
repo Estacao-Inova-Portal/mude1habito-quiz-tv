@@ -108,6 +108,7 @@ $green-to-lighter: linear-gradient(to right, $primary-50, $secondary-lime-25);
   padding: $line-height * 2;
   padding-left: $line-height * 3.5;
   position: relative;
+  width: 100%;
   max-width: 100%;
   font-size: 2.75vw;
   &:before {
@@ -184,4 +185,10 @@ img.quiz__result-img{
 
 .quiz__questions, .quiz__result {
   order: 1;
+}
+
+@media (max-width: $break-default){
+  .text--big{
+    font-weight: initial;
+  }
 }

@@ -130,7 +130,7 @@ class Quiz {
       '<input name="emailQuiz" id="emailQuiz" type="email" placeholder="Ex: joao@mude1habito.com.br" required>' +
       '<div class="form__multiple-choice">' +
       '<input required type="checkbox" id="optIn">' +
-      '<label for="optIn">Concordo com os <a href="/termos-de-uso" target="_blank">termo de uso</a></label>' +
+      '<label for="optIn" class="text--big">Concordo com os <a href="/termos-de-uso">termo de uso</a></label>' +
       '</div>' +
       '<input disabled class="btn--secondary-color-lime" type="submit" id="quizResultBtn" value="Ver o resultado do quiz" />' +
       '</form>' +
@@ -221,7 +221,7 @@ class Quiz {
       '<h1>' + contents.name + '</h1>' +
       '<p class="text--big">' + contents.description + '</p>' +
       '<h2>Próximos passos</h2>' +
-      '<p class="text--big">Fique tranquilo. A gente te ajuda! Conheça agora o aplicativo Mude1Hábito, a central de saúde e bem-estar que vai te ajudar na jornada de mudanças de hábitos.</p>' +
+      '<p class="text--big">Fique tranquilo. A gente te ajuda! <strong>Baixe agora o aplicativo Mude1Hábito</strong>, a central de saúde e bem-estar que vai te ajudar na jornada de mudanças de hábitos.</p>' +
       '<a class="btn btn--secondary-color-lime text--big" onClick="restart()" style="display: block;">Iniciar novo Quiz</a>' +
       '</div>' +
       '<img src="img/quiz/pictures/' + contents.simpleName + '.svg" class="quiz__result-img" alt="Imagem representando ' + contents.name + '">';
