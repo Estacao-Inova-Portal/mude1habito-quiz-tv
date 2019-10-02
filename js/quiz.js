@@ -45,7 +45,7 @@ const content = [{
     {
       answer: 'Poderia melhorar',
       image: 'bocejo',
-      value: 'balance',
+      value: 'movement',
     },
   ]
 }, {
@@ -70,7 +70,7 @@ const content = [{
     {
       answer: 'Não sei organizar meus horários',
       image: 'relogio',
-      value: 'balance'
+      value: 'movement'
     },
   ]
 }, {
@@ -170,7 +170,7 @@ const content = [{
     {
       answer: 'Equilibrado e colorido',
       image: 'alimento',
-      value: null,
+      value: '',
     },
   ]
 }, {
@@ -210,7 +210,7 @@ const content = [{
     {
       answer: 'Durmo até mais tarde',
       image: 'sono',
-      value: 'movement'
+      value: 'food'
     },
     {
       answer: 'Pratico esportes',

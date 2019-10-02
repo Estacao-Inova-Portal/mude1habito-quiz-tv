@@ -50,6 +50,13 @@
 </head>
 
 <body class="grid grid--vertical grid--background-light">
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+
   <div class="grid__container-full util--background-gradient-green quiz" id="quizContainer">
     <section class="grid__container" id="quiz">
       <!-- Title -->
@@ -91,9 +98,9 @@
     </section>
   </div>
 
-<!-- Scripts -->
-<!-- M1H scripts -->
-<script src="js/quiz.js"></script>
-<script async defer src="js/m1h.js"></script>
+  <!-- Scripts -->
+  <!-- M1H scripts -->
+  <script src="js/quiz.js"></script>
+  <script async defer src="js/m1h.js"></script>
 
 </html>

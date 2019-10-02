@@ -125,22 +125,16 @@ class Quiz {
     this.where.innerHTML = '<div class="quiz__result">' +
       '<form id="quizForm" class="grid--ideal-type">' +
       '<h1>Estamos quase lá!</h1>' +
-      '<p class="text--big">Para acessar o seu resultado, gostaríamos de ter acesso ao seu e-mail.</p>' +
+      '<p class="text--big">Adicionar o e-mail não é obrigatório, mas caso queira receber o resultado e dicas em sua caixa de entrada, complete o campo abaixo.</p>' +
       '<label for="emailQuiz">Insira o seu e-mail aqui</label>' +
-      '<input name="emailQuiz" id="emailQuiz" type="email" placeholder="Ex: joao@mude1habito.com.br" required>' +
+      '<input name="emailQuiz" id="emailQuiz" type="email" placeholder="Ex: joao@mude1habito.com.br">' +
       '<div class="form__multiple-choice">' +
-      '<input required type="checkbox" id="optIn">' +
+      '<input type="checkbox" id="optIn">' +
       '<label for="optIn" class="text--big">Concordo com os <a href="/termos-de-uso">termo de uso</a></label>' +
       '</div>' +
-      '<input disabled class="btn--secondary-color-lime" type="submit" id="quizResultBtn" value="Ver o resultado do quiz" />' +
+      '<input class="btn--secondary-color-lime" type="submit" id="quizResultBtn" value="Ver o resultado do quiz" />' +
       '</form>' +
       '</div>';
-
-    const optInInput = document.getElementById('optIn');
-    const quizBtn = document.getElementById('quizResultBtn');
-    optInInput.addEventListener('change', (e) => { e.target.checked === true ? quizBtn.disabled = false : quizBtn.disabled = true })
-
-    this.parent.scrollIntoView();
 
     // Adds event listeners on the Form
     document.getElementById('quizForm').addEventListener('submit', this.leadCapture.bind(this))
@@ -151,24 +145,26 @@ class Quiz {
   leadCapture(event) {
     event.preventDefault();
 
-    const userdata = {
-      email: event.srcElement[0].value,
-      food: this.scoreboard.food,
-      balance: this.scoreboard.balance,
-      movement: this.scoreboard.movement,
-      pillar: this.winner,
+    if (event.srcElement[0].value) {
+      const userdata = {
+        email: event.srcElement[0].value,
+        food: this.scoreboard.food,
+        balance: this.scoreboard.balance,
+        movement: this.scoreboard.movement,
+        pillar: this.winner,
+      }
+
+      // Parses user data to be sent to the backend
+      let url = '?'
+      Object.keys(userdata).forEach(element => {
+        url += element + '=' + userdata[element] + '&';
+      });
+
+      // Sends data to backend
+      const req = new XMLHttpRequest()
+      req.open('GET', 'https://script.google.com/a/portalunimed.com.br/macros/s/AKfycbz8e_4lkt-Ha2uZCsMM3hSxz5MXXNGgAn8MYdhSFg/exec' + url)
+      req.send()
     }
-
-    // Parses user data to be sent to the backend
-    let url = '?'
-    Object.keys(userdata).forEach(element => {
-      url += element + '=' + userdata[element] + '&';
-    });
-
-    // Sends data to backend
-    const req = new XMLHttpRequest()
-    req.open('GET', 'https://script.google.com/a/portalunimed.com.br/macros/s/AKfycbz8e_4lkt-Ha2uZCsMM3hSxz5MXXNGgAn8MYdhSFg/exec' + url)
-    req.send()
 
     // Shows the Quiz result to the user
     this.results()
@@ -233,7 +229,7 @@ class Quiz {
 // Creates the quiz
 const theQuiz = new Quiz('quizInterface')
 
-function restart(){
+function restart() {
   location.reload();
 }
 
