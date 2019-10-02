@@ -40,7 +40,7 @@ const content = [{
     {
       answer: 'Não consigo dormir',
       image: 'cansado',
-      value: 'food',
+      value: 'movement',
     },
     {
       answer: 'Poderia melhorar',

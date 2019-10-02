@@ -180,6 +180,14 @@ class Quiz {
       this.scoreboard[value] > preData ? this.winner = value : null;
     }
 
+    if (this.winner === 'balance' && this.scoreboard.movement === this.scoreboard.balance){
+      this.winner = 'movement'
+    }
+
+    if (this.winner === 'balance' && this.scoreboard.food === this.scoreboard.balance) {
+      this.winner = 'food'
+    }
+
     //Updates the content global variable (other classes uses it, such as the Content/News class)
     pillar = this.winner;
   }
